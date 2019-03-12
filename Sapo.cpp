@@ -12,10 +12,10 @@ Sapo::Sapo () {
 }
 
 //Método Pular é o responsável por gerar o pulo do sapo
-void Sapo::get_Pular (int tamanho_pulo){
+void Sapo::get_Pular (){
 	random_device rd;
 	default_random_engine gen(rd());
-	uniform_int_distribution<> dis(1, tamanho_pulo);
+	uniform_int_distribution<> dis(1, 10);
 	distancia_percorrida += dis(gen);
 	quantidade_de_pulos += 1;
 }

@@ -3,18 +3,13 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main(void)
 {
-	//Condicional para indicar se o programa foi chamado de forma correta
-	if (argc<=4){
-		cout << "Digite pelo dois valores inteiros: ./ex <distancia_total_da_corrida> <tamanho_pulo_sapo_1> <tamanho_pulo_sapo_2> <tamanho_pulo_sapo_3>" << endl;
-		return 0;
-	}
-	/*Atribui o valor de argv[1], ou seja o primeiro valor que o usuario inseriu a distancia total da corrida*/
-	
-
-	
-	
-	
+	int numero_sapos = 10;
+	corrida_sapo Run;
+	Run.set_add_sapos(numero_sapos);
+	Run.set_nomear_sapos(numero_sapos);
+	Run.set_distancia_corrida(1100);
+	Run.get_corrida_de_sapos();
 	return 0;
 }

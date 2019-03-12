@@ -1,24 +1,24 @@
-#include "Sapo.h"
+#include "Corrida_Sapos.h"
 
-void Sapo::set_add_sapos(int numero){
+void corrida_sapo::set_add_sapos(int numero){
 	sapos = new Sapo[numero];
 }
 
-void Sapo::set_nomear_sapos(int numero = 3){
+void corrida_sapo::set_nomear_sapos(int numero){
 	/*Atribui os identificadores dos sapos*/
 	for (int i = 1; i <= numero; i++){
 		sapos[i-1].set_atribuir_identificador(i);
 	}
 }
 
-void Sapo::set_distancia_corrida(int numero = 10){
+void corrida_sapo::set_distancia_corrida(int numero){
 	Sapo::distancia_total_da_corrida = numero;
 }
 
-void Sapo::get_corrida_de_sapos(char *argv){
+void corrida_sapo::get_corrida_de_sapos(){
 	// Aqui é onde realmente ocorre a corrida
 	for (int i = 0; i < 3; i++){
-		sapos[i].get_Pular(atoi(argv[i+2]));
+		sapos[i].get_Pular();
 		if (sapos[i].set_distancia_percorrida() >= Sapo::distancia_total_da_corrida){
 			cout << "O sapo Vencedor: " << i+1 << "\n" << "Quantidade de pulos: " << sapos[i].set_numero_pulos() << "\n" << "Distancia Percorrida: " << sapos[i].set_distancia_percorrida() << endl;
 			break;

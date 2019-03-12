@@ -22,5 +22,5 @@ class Sapo{
 		void set_atribuir_identificador (int i);
 		int set_distancia_percorrida();
 		int set_numero_pulos();
-		void get_Pular(int tamanho_pulo);
+		void get_Pular();
 };

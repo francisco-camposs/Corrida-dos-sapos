@@ -8,8 +8,8 @@ class corrida_sapo{
 
 	public:
 		void set_add_sapos(int numero);
-		void set_nomear_sapos(int numero = 3);
-		void set_distancia_corrida(int numero = 10);
-		void get_corrida_de_sapos(char *argv);
+		void set_nomear_sapos(int numero);
+		void set_distancia_corrida(int numero);
+		void get_corrida_de_sapos();
 };
 

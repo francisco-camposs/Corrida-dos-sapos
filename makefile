@@ -2,7 +2,7 @@
 project_name = ex
 
 # Arquivos .o
-o_archives = main.o Sapo.o
+o_archives = main.o Sapo.o Corrida_Sapos.o
 
 # Compilador
 cc=g++
@@ -19,14 +19,18 @@ text = 	"Como executar o programa: ./ex <distancia da corrida> <tamanho do salto
 all: $(project_name)
 	@echo $(text)
 
-$(project_name): main.o Sapo.o
+$(project_name): $(o_archives)
 	$(cc) $(CC_FLAGS) $(o_archives) -o $(project_name)
+
+Corrida_Sapos.o: Corrida_Sapos.cpp
+	$(cc) $(CC_FLAGS) Corrida_Sapos.cpp -c
 
 main.o: main.cpp
 	$(cc) $(CC_FLAGS) main.cpp -c
 
 Sapo.o: Sapo.cpp
 	$(cc) $(CC_FLAGS) Sapo.cpp -c
+
 
 #Remove os arquivos .o da pasta
 clean:

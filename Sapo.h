@@ -20,7 +20,7 @@ class Sapo{
 		//Print é utilizada para verificar se os valores estão corretos
 		void get_Print();
 		void set_atribuir_identificador (int i);
-		int set_distancia_percorrida();
-		int set_numero_pulos();
+		int get_distancia_percorrida();
+		int get_numero_pulos();
 		void get_Pular();
 };

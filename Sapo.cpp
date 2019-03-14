@@ -31,11 +31,11 @@ void Sapo::get_Print(){
 }
 
 //Método para poder retornar a distancia percorrida
-int Sapo::set_distancia_percorrida(){
+int Sapo::get_distancia_percorrida(){
 	return distancia_percorrida;
 }
 
 // Método para retornar a quantidade de pulos
-int Sapo::set_numero_pulos(){
+int Sapo::get_numero_pulos(){
 	return quantidade_de_pulos;
 }

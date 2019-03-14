@@ -13,7 +13,7 @@ CC_FLAGS=-O0         \
          -g      \
          -std=c++11
 
-text = 	"Como executar o programa: ./ex <distancia da corrida> <tamanho do salto do sapo 1> <tamanho do salto do sapo 2> <tamanho do salto do sapo 3>"
+text = 	"Como executar o programa: ./ex"
 
 #Os objetivos all, main.o e Sapo.o são para a compilação
 all: $(project_name)

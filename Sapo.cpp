@@ -1,12 +1,12 @@
-#include "Sapo.h"
+#include "Sapo.h" 
 
 using namespace std;
 
 int Sapo::distancia_total_da_corrida = 0;
 
 // Método construtor
-Sapo::Sapo () { 
-	identificador = 0;
+Sapo::Sapo () {
+	identificador = "John Doe";
 	distancia_percorrida = 0;
 	quantidade_de_pulos = 0;
 }
@@ -21,8 +21,8 @@ void Sapo::get_Pular (){
 }
 
 // Método parra atribuir o identificador de cada sapo
-void Sapo::set_atribuir_identificador (int i){
-	identificador = i;
+void Sapo::set_atribuir_identificador (string name){
+	identificador = name;
 }
 
 //Método para imprimir os valores
@@ -38,4 +38,9 @@ int Sapo::get_distancia_percorrida(){
 // Método para retornar a quantidade de pulos
 int Sapo::get_numero_pulos(){
 	return quantidade_de_pulos;
+}
+
+//Método para retornar o nome do sapo
+string Sapo::get_nome_sapo(){
+	return identificador;
 }

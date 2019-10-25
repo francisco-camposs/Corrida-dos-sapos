@@ -1,48 +1,35 @@
-# makefile do projeto corrida de sapos
-project_name = ex
 
-VPATH = src:build
-
-# Arquivos .o
-o_archives = build/Sapo.o build/Corrida_Sapos.o build/main.o
-
-# Arquivos .cpp
-
-# flags/ etiquetas para o Compilador
-CXXFLAGS =-O0         \
-         -Wall      \
-         -std=c++11  \
-         -I include   \
-         -o
-
-CPPFLAGS =-O0         \
-         -Wall      \
-         -std=c++11  \
-         -I include   
-
-text = 	"Como executar o programa: ./ex"
+EXE = corrida_sapos
 
 
+SRC_DIR = src
+OBJ_DIR = ./build
+BIN_DIR = ./bin
+DOC_DIR = ./doc
+CC = g++
+SRC = $(wildcard $(SRC_DIR)/*.cpp)
+OBJ = $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-#Os objetivos all, main.o e Sapo.o são para a compilação
-all: $(project_name)
-	@echo $(text)
+CPPFLAGS += -Iinclude
+CFLAGS += -ansi -Wall -pedantic -O0 -g -ansi -Wpedantic -pg -std=c++14  
+LDFLAGS += -Llib
+LDLIBS += -lm
 
-vpath
-$(project_name): $(o_archives)
-	$(CXX) $(CPPFLAGS) $(o_archives) -o $(project_name)
+.PHONY: all clean
 
-vpath %.o build
+all: prepare $(EXE)
 
-build/main.o: main.cpp
+$(EXE): $(OBJ)
+	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
-build/Sapo.o: Sapo.cpp
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o  $@
 
-build/Corrida_Sapos.o: Corrida_Sapos.cpp
-
-
-#Remove os arquivos .o da pasta
+prepare:
+	mkdir -p $(OBJ_DIR)
+	mkdir -p $(DOC_DIR)
+doxy:
+	mkdir -p $(DOC_DIR)
+	doxygen
 clean:
-	rm -rf *.o
-	rm -rf src/*.o
-	rm -rf build/*.o
+	$(RM) -rf $(OBJ) $(EXE) $(DOC_DIR) *.gch
